@@ -1,0 +1,22 @@
+$ng-flex-justify-content-between: space-between;
+$ng-flex-align-items-center: center;
+
+@mixin _flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin _justify-content-align-items($justify: flex-start, $align: center) {
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin ng-flex-row-start-center {
+  @include _flex-row;
+  @include _justify-content-align-items();
+}
+
+@mixin ng-flex-row-between-center {
+  @include _flex-row;
+  @include _justify-content-align-items(space-between);
+}

@@ -1,0 +1,14 @@
+@import "./toolbar-base";
+
+.ng-toolbar {
+  @include ng-toolbar-base;
+  .container {
+    @include ng-toolbar-container;
+    .toolbar-links {
+      @include ng-toolbar-links;
+      .link-item {
+        @include ng-toolbar-links-item;
+      }
+    }
+  }
+}

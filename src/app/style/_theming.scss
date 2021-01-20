@@ -1,0 +1,98 @@
+@import "../../../node_modules/@angular/material/theming";
+@import "../../../projects/templates/src/lib/style/theming";
+
+$ng-light-theme-foreground: (
+  base: black,
+  divider: $dark-dividers,
+  dividers: $dark-dividers,
+  disabled: $dark-disabled-text,
+  disabled-button: rgba(black, 0.26),
+  disabled-text: $dark-disabled-text,
+  elevation: black,
+  hint-text: $dark-disabled-text,
+  secondary-text: $dark-secondary-text,
+  icon: rgba(black, 0.54),
+  icons: rgba(black, 0.54),
+  text: rgba(black, 0.87),
+  slider-min: rgba(black, 0.87),
+  slider-off: rgba(black, 0.26),
+  slider-off-active: rgba(black, 0.38),
+);
+
+$ng-light-theme-background: (
+  status-bar: map-get($mat-grey, 300),
+  app-bar: map-get($mat-grey, 100),
+  background: map-get($mat-grey, 50),
+  hover: rgba(black, 0.04),
+  card: white,
+  dialog: white,
+  disabled-button: rgba(black, 0.12),
+  raised-button: white,
+  focused-button: $dark-focused,
+  selected-button: map-get($mat-grey, 300),
+  selected-disabled-button: map-get($mat-grey, 400),
+  disabled-button-toggle: map-get($mat-grey, 200),
+  unselected-chip: map-get($mat-grey, 300),
+  disabled-list-option: map-get($mat-grey, 200),
+  tooltip: map-get($mat-grey, 700),
+);
+
+@function _ng-create-light-color-config($primary, $accent, $warn: null) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: if($warn != null, $warn, mat-palette($mat-red)),
+    is-dark: false,
+    foreground: $ng-light-theme-foreground,
+    background: $ng-light-theme-background
+  );
+}
+
+@function ng-light-theme(
+  $primary: mat-palette($mat-brown),
+  $accent: mat-palette($mat-amber),
+  $warn: mat-palette($mat-red)
+) {
+  @if $accent != null {
+    @return _mat-create-backwards-compatibility-theme(
+      _mat-validate-theme(
+        (
+          _is-legacy-theme: true,
+          color: _ng-create-light-color-config($primary, $accent, $warn),
+        )
+      )
+    );
+  }
+  $result: $primary;
+  @if map-get($primary, color) {
+    $color-settings: map-get($primary, color);
+    $primary: map-get($color-settings, primary);
+    $accent: map-get($color-settings, accent);
+    $warn: map-get($color-settings, warn);
+    $result: map-merge(
+      $result,
+      (
+        color: _ng-create-light-color-config($primary, $accent, $warn),
+      )
+    );
+  }
+  @return _mat-create-backwards-compatibility-theme(
+    _mat-validate-theme($result)
+  );
+}
+
+@include mat-ripple();
+@include cdk-a11y();
+@include cdk-overlay();
+
+// ng-light-theme
+$ng-light-theme: ng-light-theme();
+
+// .ng-light-theme {
+//   @include ng-toolbar-theme($ng-light-theme);
+// }
+@include ng-toolbar-theme($ng-light-theme);
+
+
+// overlay
+@include mat-menu-theme($ng-light-theme);

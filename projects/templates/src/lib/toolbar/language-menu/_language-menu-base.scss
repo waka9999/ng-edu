@@ -1,0 +1,6 @@
+@import "../../style/flex";
+
+@mixin ng-language-menu-base {
+  position: relative;
+  @include ng-flex-row-start-center;
+}

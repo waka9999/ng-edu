@@ -1,0 +1,5 @@
+@import "./language-menu-base";
+
+.ng-language-menu {
+  @include ng-language-menu-base;
+}

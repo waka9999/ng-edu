@@ -1,0 +1,27 @@
+@import "../style/flex";
+
+$ng-toolbar-padding: 12px 0 !default;
+$ng-toolbar-links-item-margin-left: 16px !default;
+
+@mixin ng-toolbar-base {
+  position: relative;
+  display: block;
+  padding: $ng-toolbar-padding;
+  line-height: 24px;
+}
+
+@mixin ng-toolbar-container {
+  @include ng-flex-row-between-center;
+}
+
+@mixin ng-toolbar-links {
+  @include ng-flex-row-start-center;
+}
+
+@mixin ng-toolbar-links-item {
+  margin-left: $ng-toolbar-links-item-margin-left;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
