@@ -1,7 +1,10 @@
 <ng-toolbar class="dark-toolbar">
   <ng-language-menu class="toolbar-start"></ng-language-menu>
-  <ng-container class="toolbar-end" *ngFor="let item of toolbarLinkItems">
-    <a class="link-item" [title]="item?.title" href="#">{{ item?.text }}</a>
-    <a class="link-item" [title]="item?.title" lhref="#">{{ item?.text }}</a>
-  </ng-container>
+  <div class="toolbar-end">
+    <div class="toolbar-links">
+      <ng-container *ngFor="let item of signItems">
+        <a class="link-item" [title]="item?.title" href="#">{{ item?.text }}</a>
+      </ng-container>
+    </div>    
+  </div>
 </ng-toolbar>

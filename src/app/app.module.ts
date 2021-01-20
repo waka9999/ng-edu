@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppConfigModule } from './app.config.module';
 import { ToolbarModule } from 'projects/templates/src/lib/toolbar';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +15,7 @@ import { ToolbarModule } from 'projects/templates/src/lib/toolbar';
     AppRoutingModule,
     BrowserAnimationsModule,
     AppConfigModule.forRoot(),
+    CommonModule,
     ToolbarModule,
   ],
   providers: [],
