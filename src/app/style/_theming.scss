@@ -88,10 +88,9 @@ $ng-light-theme-background: (
 // ng-light-theme
 $ng-light-theme: ng-light-theme();
 
-// .ng-light-theme {
-//   @include ng-toolbar-theme($ng-light-theme);
-// }
-@include ng-toolbar-theme($ng-light-theme);
+.ng-light-theme {
+  @include ng-toolbar-theme($ng-light-theme);
+}
 
 
 // overlay

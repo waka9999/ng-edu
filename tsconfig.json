@@ -24,6 +24,12 @@
         "dist/templates/templates",
         "dist/templates"
       ],
+      "@core": [
+        "src/core"
+      ],
+      "@core/*": [
+        "src/core/*"
+      ],
     }
   },
   "angularCompilerOptions": {
