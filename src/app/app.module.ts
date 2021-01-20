@@ -5,8 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppConfigModule } from './app.config.module';
-import { ToolbarModule } from 'projects/templates/src/lib/toolbar';
 import { CommonModule } from '@angular/common';
+import { ToolbarModule } from 'projects/templates/src/lib/toolbar';
+import { ProgressBarModule } from 'projects/templates/src/lib/progress-bar';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { CommonModule } from '@angular/common';
     AppConfigModule.forRoot(),
     CommonModule,
     ToolbarModule,
+    ProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

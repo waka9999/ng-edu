@@ -1,0 +1,5 @@
+@import "./progress-bar-base";
+
+.ng-progress-bar {
+  @include ng-progress-bar-base;
+}

@@ -1,0 +1,13 @@
+:host {
+  display: block;
+
+  .ng-progress-bar {
+    position: absolute;
+  }
+}
+// z-index
+:host {
+  .ng-progress-bar {
+    z-index: 1000;
+  }
+}

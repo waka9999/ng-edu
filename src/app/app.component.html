@@ -1,3 +1,4 @@
+<ng-progress-bar #progressbar></ng-progress-bar>
 <ng-toolbar class="dark-toolbar">
   <ng-language-menu class="toolbar-start"></ng-language-menu>
   <div class="toolbar-end">
@@ -5,6 +6,6 @@
       <ng-container *ngFor="let item of signItems">
         <a class="link-item" [title]="item?.title" href="#">{{ item?.text }}</a>
       </ng-container>
-    </div>    
+    </div>
   </div>
 </ng-toolbar>
