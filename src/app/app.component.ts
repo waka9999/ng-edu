@@ -8,6 +8,7 @@ import {
   Renderer2,
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { linkItems } from '@core/models/toolbar';
 import { ConfigService } from '@core/services/config.service';
 import { InjectBase } from '@core/shared/inject.base';
 import { takeUntil } from 'rxjs/operators';
@@ -19,6 +20,7 @@ import { takeUntil } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent extends InjectBase implements OnInit {
+  toolbarLinkItems = linkItems;
   constructor(
     injector: Injector,
     private config: ConfigService,

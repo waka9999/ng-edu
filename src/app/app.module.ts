@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppConfigModule } from './app.config.module';
-import { ToolbarModule } from 'projects/templates/src/public-api';
+import { ToolbarModule } from 'projects/templates/src/lib/toolbar';
 
 @NgModule({
   declarations: [AppComponent],

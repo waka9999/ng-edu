@@ -7,6 +7,6 @@ import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
   declarations: [ToolbarComponent, LanguageMenuComponent],
   imports: [CommonModule, MatMenuModule],
-  exports: [ToolbarComponent],
+  exports: [ToolbarComponent, LanguageMenuComponent],
 })
 export class ToolbarModule {}

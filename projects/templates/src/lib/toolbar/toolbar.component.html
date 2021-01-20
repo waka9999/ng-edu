@@ -11,9 +11,12 @@
   </div>
    -->
 <div class="container">
-  <div class="toolbar-links"><ng-language-menu></ng-language-menu></div>
   <div class="toolbar-links">
-    <a class="link-item" href="#">Register</a>
-    <a class="link-item" href="#">Sign in</a>
+    <ng-content select=".toolbar-start">
+    </ng-content>
+  </div>
+  <div class="toolbar-links">
+    <ng-content select=".toolbar-end">
+    </ng-content>
   </div>
 </div>
