@@ -8,6 +8,7 @@ import { AppConfigModule } from './app.config.module';
 import { CommonModule } from '@angular/common';
 import { ToolbarModule } from 'projects/templates/src/lib/toolbar';
 import { ProgressBarModule } from 'projects/templates/src/lib/progress-bar';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { ProgressBarModule } from 'projects/templates/src/lib/progress-bar';
     CommonModule,
     ToolbarModule,
     ProgressBarModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

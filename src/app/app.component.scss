@@ -1,13 +1,33 @@
-:host {
-  display: block;
+$ng-sidenav-menu-width: 240px !default;
+$ng-sidenav-content-open-height: 100vh !default;
 
-  .ng-progress-bar {
-    position: absolute;
+.sidenav-container {
+  .sidenav-menu {
+    width: $ng-sidenav-menu-width;
+  }
+
+  .mat-sidenav-content {
+    height: auto;
+  }
+
+  &.mat-drawer-container-has-open {
+    .mat-sidenav-content {
+      height: $ng-sidenav-content-open-height;
+    }
   }
 }
+
 // z-index
+$ng-progress-bar-zindex: 1000 !default;
+$ng-toolbar-zindex: 100 !default;
+
 :host {
   .ng-progress-bar {
-    z-index: 1000;
+    z-index: $ng-progress-bar-zindex;
+  }
+  .mat-sidenav-content {
+    .ng-toolbar {
+      z-index: $ng-toolbar-zindex;
+    }
   }
 }

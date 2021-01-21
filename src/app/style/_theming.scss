@@ -90,6 +90,7 @@ $ng-light-theme: ng-light-theme();
 
 .ng-light-theme {
   @include mat-progress-bar-theme($ng-light-theme);
+  @include mat-sidenav-theme($ng-light-theme);
   @include ng-toolbar-theme($ng-light-theme);
 }
 

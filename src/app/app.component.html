@@ -1,11 +1,18 @@
 <ng-progress-bar #progressbar></ng-progress-bar>
-<ng-toolbar class="dark-toolbar">
-  <ng-language-menu class="toolbar-start"></ng-language-menu>
-  <div class="toolbar-end">
-    <div class="toolbar-links">
-      <ng-container *ngFor="let item of signItems">
-        <a class="link-item" [title]="item?.title" href="#">{{ item?.text }}</a>
-      </ng-container>
-    </div>
-  </div>
-</ng-toolbar>
+<mat-sidenav-container class="sidenav-container" [hasBackdrop]="true">
+  <mat-sidenav #snav class="sidenav-menu" [opened]="true"> ASDF </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-toolbar class="dark-toolbar">
+      <ng-language-menu class="toolbar-start"></ng-language-menu>
+      <div class="toolbar-end">
+        <div class="toolbar-links">
+          <ng-container *ngFor="let item of signItems">
+            <a class="link-item" [title]="item?.title" href="#">{{
+              item?.text
+            }}</a>
+          </ng-container>
+        </div>
+      </div>
+    </ng-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
