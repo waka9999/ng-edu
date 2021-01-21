@@ -1,0 +1,9 @@
+@import "./carousel-indicators-base";
+
+.ng-carousel-indicators {
+  @include ng-carousel-indicators-base;
+
+  span {
+    @include ng-carousel-indicators-span;
+  }
+}

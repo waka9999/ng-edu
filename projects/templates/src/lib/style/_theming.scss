@@ -1,4 +1,4 @@
 @import "./grid";
+@import "./util";
 @import "../toolbar/toolbar-theme";
-
-@include ng-grid-container;
+@import "../carousel/carousel-theme";

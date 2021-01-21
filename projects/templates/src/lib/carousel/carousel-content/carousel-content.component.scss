@@ -1,0 +1,17 @@
+@import "./carousel-content-base";
+
+.ng-carousel-content {
+  @include ng-carousel-content-base;
+}
+
+.ng-web {
+  @include web-layout-ng-carouse-content;
+}
+
+.ng-tablet {
+  @include tablet-layout-ng-carouse-content;
+}
+
+.ng-handset {
+  @include handset-layout-ng-carouse-content;
+}

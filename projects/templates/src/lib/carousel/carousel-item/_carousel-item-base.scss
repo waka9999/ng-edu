@@ -1,0 +1,77 @@
+$ng-carousel-item-width: 100% !default;
+$ng-carousel-item-margin-right: -100% !default;
+
+$item-image-width: 100% !default;
+$item-image-min-width: 1280px !default;
+$item-image-height: 900px !default;
+$item-image-min-height: 720px !default;
+
+@mixin ng-carousel-item-base {
+  position: relative;
+  width: $ng-carousel-item-width;
+  margin-right: $ng-carousel-item-margin-right;
+  @include _ng-carousel-item-display;
+}
+
+@mixin _ng-carousel-item-display {
+  display: none;
+  float: left;
+  overflow: hidden;
+  &.active {
+    display: block;
+  }
+}
+
+@mixin ng-carousel-item-view {
+  position: relative;
+  overflow: hidden;
+}
+
+@mixin ng-carousel-item-image {
+  position: relative;
+  display: block;
+  width: $item-image-width;
+  height: auto;
+}
+
+@mixin ng-carousel-content-position {
+  position: absolute;
+  left: 16%;
+  right: 16%;
+  top: 320px;
+}
+
+@mixin handset-layout-ng-carousel-content-position {
+  .ng-carousel-content {
+    left: 10%;
+    right: 10%;
+  }
+}
+
+@mixin web-layout-ng-carousel-item {
+  .ng-carousel-item {
+    .item-image {
+      width: $item-image-width;
+      min-width: $item-image-min-width;
+      min-height: $item-image-min-height;
+    }
+  }
+}
+
+@mixin tablet-layout-ng-carousel-item {
+  .ng-carousel-item {
+    .item-image {
+      width: auto;
+      min-height: $item-image-min-height;
+    }
+  }
+}
+
+@mixin handset-layout-ng-carousel-item {
+  .ng-carousel-item {
+    .item-image {
+      height: $item-image-height;
+      width: auto;
+    }
+  }
+}

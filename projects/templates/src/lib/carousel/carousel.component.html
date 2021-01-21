@@ -1,0 +1,21 @@
+<a class="ng-carousel-control control-prev opacity" #prevClick>
+  <span class="material-icons"> arrow_forward_ios </span>
+</a>
+<a class="ng-carousel-control control-next opacity" #nextClick>
+  <span class="material-icons"> arrow_forward_ios </span>
+</a>
+<ng-carousel-indicators
+  (indicatorSelect)="indicatorClick($event)"
+  [items]="items"
+></ng-carousel-indicators>
+<div class="ng-carousel-inner">
+  <ng-container *ngFor="let item of items">
+    <ng-carousel-item
+      [@carousel]="item.state"
+      [ngClass]="{
+        active: item.state === 'fadeIn' || item.state === 'slideIn'
+      }"
+      [item]="item"
+    ></ng-carousel-item>
+  </ng-container>
+</div>

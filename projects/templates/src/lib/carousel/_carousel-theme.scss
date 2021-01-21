@@ -1,0 +1,18 @@
+@import "./carousel-content/carousel-content-theme";
+@import "./carousel-indicators/carousel-indicators-theme";
+@import "./carousel-item/carousel-item-theme";
+
+@mixin ng-carousel-theme($theme) {
+  $color: mat-get-color-config($theme);
+  $foreground: map-get($color, foreground);
+
+  .ng-carousel {
+    @include ng-carousel-content-theme($theme);
+    @include ng-carousel-indicators-theme($theme);
+    @include ng-carousel-item-theme($theme);
+
+    .ng-carousel-control {
+      color: invert(mat-color($foreground, carousel-text));
+    }
+  }
+}

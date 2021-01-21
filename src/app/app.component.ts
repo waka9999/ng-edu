@@ -16,11 +16,14 @@ import {
   RouteConfigLoadStart,
   Router,
 } from '@angular/router';
+import { carouselItems } from '@core/models/carousel';
 import { Container } from '@core/models/grid';
 import { signItems } from '@core/models/sign-items';
 import { ConfigService } from '@core/services/config.service';
 import { InjectBase } from '@core/shared/inject.base';
+import { CarouselItem } from 'projects/templates/src/lib/carousel/model';
 import { ProgressBarComponent } from 'projects/templates/src/lib/progress-bar';
+import { Observable, of } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
@@ -35,6 +38,8 @@ export class AppComponent extends InjectBase implements OnInit {
   @ViewChild('progressbar', { static: true })
   progressbar!: ProgressBarComponent;
 
+  carouselItems$!: Observable<CarouselItem[]>;
+  
   constructor(
     injector: Injector,
     private config: ConfigService,
@@ -62,6 +67,7 @@ export class AppComponent extends InjectBase implements OnInit {
       '(max-width: 960px)',
       this.updateLayoutForMediaChange.bind(this)
     );
+    this.initCarousel();
   }
 
   private initConfig(): void {
@@ -106,5 +112,9 @@ export class AppComponent extends InjectBase implements OnInit {
     this.renderer.addClass(this.elementRef.nativeElement, Container.Web);
     this.renderer.removeClass(this.elementRef.nativeElement, Container.Tablet);
     this.renderer.removeClass(this.elementRef.nativeElement, Container.Handset);
+  }
+
+  private initCarousel(): void {
+    this.carouselItems$ = of(carouselItems);
   }
 }

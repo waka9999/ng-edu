@@ -10,13 +10,17 @@ $ng-toolbar-font-size: 10px !default;
 
   .ng-toolbar {
     font-size: $ng-toolbar-font-size;
-    background-color: map-get($background, app-bar);
-    color: mat-color($foreground, secondary-text);
-    &.dark-toolbar {
-      background-color: mat-color($primary);
-      color: rgba(white, 0.7);
+    background-color: map-get($background, toolbar);
+    color: mat-color($foreground, toolbar-text);
+    .link-item {
+      color: mat-color($foreground, toolbar-link-text);
+    }
+
+    &.ng-primary {
+      background-color: mat-color($primary,900);
+      color: invert(mat-color($foreground, toolbar-text));
       .link-item {
-        color: white;
+        color: invert(mat-color($foreground, toolbar-link-text));
       }
     }
   }

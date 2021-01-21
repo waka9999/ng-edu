@@ -2,7 +2,7 @@
 <mat-sidenav-container class="sidenav-container" [hasBackdrop]="true">
   <mat-sidenav #snav class="sidenav-menu" [opened]="true"> ASDF </mat-sidenav>
   <mat-sidenav-content>
-    <ng-toolbar class="dark-toolbar">
+    <ng-toolbar class="ng-primary">
       <ng-language-menu class="toolbar-start"></ng-language-menu>
       <div class="toolbar-end">
         <div class="toolbar-links">
@@ -14,5 +14,8 @@
         </div>
       </div>
     </ng-toolbar>
+    <main>
+      <ng-carousel [items$]="carouselItems$"></ng-carousel>
+    </main>
   </mat-sidenav-content>
 </mat-sidenav-container>

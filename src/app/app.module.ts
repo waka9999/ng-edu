@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { ToolbarModule } from 'projects/templates/src/lib/toolbar';
 import { ProgressBarModule } from 'projects/templates/src/lib/progress-bar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { CarouselModule } from 'projects/templates/src/public-api';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     CommonModule,
     ToolbarModule,
     ProgressBarModule,
+    CarouselModule,
     MatSidenavModule,
   ],
   providers: [],

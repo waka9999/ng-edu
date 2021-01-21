@@ -1,0 +1,49 @@
+<span
+  class="content-title"
+  [@custom]="{
+    value: item.state,
+    params: { opacity: '0', delay: '600ms', y: '50%', duration: '600ms' }
+  }"
+>
+  {{ item?.title }}
+</span>
+<h1
+  class="content-heading"
+  [@custom]="{
+    value: '*',
+    params: { opacity: '0', delay: '1000ms', y: '50%', duration: '600ms' }
+  }"
+>
+  {{ item?.heading }}
+</h1>
+<p
+  class="content-abstract"
+  [@custom]="{
+    value: '*',
+    params: { opacity: '0', delay: '1400ms', y: '50%', duration: '600ms' }
+  }"
+>
+  {{ item?.abstract }}
+</p>
+<div class="content-links">
+  <button
+    class="item-button"
+    mat-raised-button
+    color="accent"
+    [@custom]="{
+      value: '*',
+      params: { opacity: '0', delay: '2000ms', x: '-50%', duration: '600ms' }
+    }"
+  >
+    Learn more
+  </button>
+  <a
+    class="item-link"
+    href="#"
+    [@custom]="{
+      value: '*',
+      params: { opacity: '0', delay: '2400ms', y: '50%', duration: '600ms' }
+    }"
+    >Register Now</a
+  >
+</div>

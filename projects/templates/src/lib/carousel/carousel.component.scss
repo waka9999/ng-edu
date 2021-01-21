@@ -1,0 +1,17 @@
+@import "./carousel-base";
+
+.ng-carousel {
+  @include ng-carousel-base;
+  @include ng-carousel-zindex;
+  .ng-carousel-control {
+    @include ng-carousel-control;
+  }
+
+  .ng-carousel-inner {
+    @include ng-carousel-inner;
+  }
+}
+
+.ng-handset {
+  @include handset-layout-ng-carousel-control;
+}

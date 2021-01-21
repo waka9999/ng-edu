@@ -1,0 +1,81 @@
+@import "../style/flex";
+
+$ng-carousel-zindex: 10 !default;
+$ng-carousel-controls: 30 !default;
+$ng-carousel-content: 20 !default;
+$ng-carousel-mask: 10 !default;
+$ng-carousel-image: 5 !default;
+
+@mixin ng-carousel-zindex {
+  z-index: $ng-carousel-zindex;
+
+  .ng-carousel-indicators {
+    z-index: $ng-carousel-controls;
+  }
+
+  .ng-carousel-control {
+    z-index: $ng-carousel-controls;
+  }
+
+  .ng-carousel-item {
+    z-index: $ng-carousel-content;
+    .mask {
+      z-index: $ng-carousel-mask;
+    }
+    .item-image {
+      z-index: $ng-carousel-image;
+    }
+    .ng-carousel-content {
+      z-index: $ng-carousel-content;
+    }
+  }
+}
+
+@mixin ng-carousel-base {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+@mixin ng-carousel-control {
+  @include ng-flex-row-center-center;
+  @include _ng-carousel-control-position;
+  width: 15%;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
+  &.control-prev {
+    left: 0;
+    span {
+      transform: rotate(-180deg);
+    }
+  }
+  &.control-next {
+    right: 0;
+  }
+}
+
+@mixin _ng-carousel-control-position {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+@mixin ng-carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+@mixin handset-layout-ng-carousel-control {
+  .ng-carousel-control {
+    display: none;
+  }
+}

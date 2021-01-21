@@ -3,38 +3,45 @@
 
 $ng-light-theme-foreground: (
   base: black,
-  divider: $dark-dividers,
-  dividers: $dark-dividers,
-  disabled: $dark-disabled-text,
-  disabled-button: rgba(black, 0.26),
-  disabled-text: $dark-disabled-text,
-  elevation: black,
-  hint-text: $dark-disabled-text,
-  secondary-text: $dark-secondary-text,
-  icon: rgba(black, 0.54),
-  icons: rgba(black, 0.54),
+  // divider: $dark-dividers,
+  // dividers: $dark-dividers,
+  // disabled: $dark-disabled-text,
+  // disabled-button: rgba(black, 0.26),
+  // disabled-text: $dark-disabled-text,
+  // elevation: black,
+  // hint-text: $dark-disabled-text,
+  // secondary-text: $dark-secondary-text,
+  // icon: rgba(black, 0.54),
+  // icons: rgba(black, 0.54),
   text: rgba(black, 0.87),
-  slider-min: rgba(black, 0.87),
-  slider-off: rgba(black, 0.26),
-  slider-off-active: rgba(black, 0.38),
+  // slider-min: rgba(black, 0.87),
+  // slider-off: rgba(black, 0.26),
+  // slider-off-active: rgba(black, 0.38),
+  toolbar-text: rgba(black, 0.69),
+  toolbar-link-text: black,
+  carousel-text: black,
+  carousel-secondary-text: rgba(black, 0.69)
 );
 
 $ng-light-theme-background: (
-  status-bar: map-get($mat-grey, 300),
-  app-bar: map-get($mat-grey, 100),
-  background: map-get($mat-grey, 50),
+  toolbar: map-get($mat-grey, 100),
+  // status-bar: map-get($mat-grey, 300),
+  // app-bar: map-get($mat-grey, 100),
+  // background: map-get($mat-grey, 50),
   hover: rgba(black, 0.04),
   card: white,
   dialog: white,
-  disabled-button: rgba(black, 0.12),
-  raised-button: white,
-  focused-button: $dark-focused,
-  selected-button: map-get($mat-grey, 300),
-  selected-disabled-button: map-get($mat-grey, 400),
-  disabled-button-toggle: map-get($mat-grey, 200),
-  unselected-chip: map-get($mat-grey, 300),
-  disabled-list-option: map-get($mat-grey, 200),
-  tooltip: map-get($mat-grey, 700),
+  // disabled-button: rgba(black, 0.12),
+  // raised-button: white,
+  // focused-button: $dark-focused,
+  // selected-button: map-get($mat-grey, 300),
+  // selected-disabled-button: map-get($mat-grey, 400),
+  // disabled-button-toggle: map-get($mat-grey, 200),
+  // unselected-chip: map-get($mat-grey, 300),
+  // disabled-list-option: map-get($mat-grey, 200),
+  // tooltip: map-get($mat-grey, 700)
+  carousel-indicators: map-get($mat-grey, 50),
+  image: map-get($mat-grey, 100),
 );
 
 @function _ng-create-light-color-config($primary, $accent, $warn: null) {
@@ -91,9 +98,10 @@ $ng-light-theme: ng-light-theme();
 .ng-light-theme {
   @include mat-progress-bar-theme($ng-light-theme);
   @include mat-sidenav-theme($ng-light-theme);
+  @include mat-button-theme($ng-light-theme);
   @include ng-toolbar-theme($ng-light-theme);
+  @include ng-carousel-theme($ng-light-theme);
 }
-
 
 // overlay
 @include mat-menu-theme($ng-light-theme);

@@ -8,6 +8,12 @@ $ng-sidenav-content-open-height: 100vh !default;
 
   .mat-sidenav-content {
     height: auto;
+
+    main {
+      position: relative;
+      display: block;
+      padding-bottom: 1200px;
+    }
   }
 
   &.mat-drawer-container-has-open {
@@ -19,8 +25,9 @@ $ng-sidenav-content-open-height: 100vh !default;
 
 // z-index
 $ng-progress-bar-zindex: 1000 !default;
-$ng-toolbar-zindex: 100 !default;
-
+$ng-toolbar-zindex: 200 !default;
+$ng-main-zindex: 0 !default;
+$ng-carousel-zindex: 100 !default;
 :host {
   .ng-progress-bar {
     z-index: $ng-progress-bar-zindex;
@@ -28,6 +35,13 @@ $ng-toolbar-zindex: 100 !default;
   .mat-sidenav-content {
     .ng-toolbar {
       z-index: $ng-toolbar-zindex;
+    }
+
+    main {
+      z-index: $ng-main-zindex;
+      .ng-carousel {
+        z-index: $ng-carousel-zindex;
+      }
     }
   }
 }

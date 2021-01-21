@@ -1,0 +1,28 @@
+@import "../../style/flex";
+
+@mixin ng-carousel-indicators-base {
+  @include ng-flex-row-center-start;
+  @include _ng-carousel-indicators-position;
+}
+
+@mixin _ng-carousel-indicators-position {
+  position: absolute;
+  right: 0;
+  bottom: calc(var(--ng-delta) * 3);
+  left: 0;
+  margin: 0 auto;
+}
+
+$ng-carousel-indicators-span-size: 8px !default;
+$ng-carousel-indicators-span-gutter: 4px !default;
+
+@mixin ng-carousel-indicators-span {
+  flex: 0 1 auto;
+  border-radius: 50%;
+  text-indent: -999px;
+  width: $ng-carousel-indicators-span-size;
+  height: $ng-carousel-indicators-span-size;
+  margin-right: $ng-carousel-indicators-span-gutter;
+  margin-left: $ng-carousel-indicators-span-gutter;
+  cursor: pointer;
+}

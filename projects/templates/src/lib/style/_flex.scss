@@ -6,6 +6,11 @@ $ng-flex-align-items-center: center;
   flex-direction: row;
 }
 
+@mixin _flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 @mixin _justify-content-align-items($justify: flex-start, $align: center) {
   justify-content: $justify;
   align-items: $align;
@@ -16,7 +21,22 @@ $ng-flex-align-items-center: center;
   @include _justify-content-align-items();
 }
 
+@mixin ng-flex-row-center-center {
+  @include _flex-row;
+  @include _justify-content-align-items(center);
+}
+
+@mixin ng-flex-row-center-start {
+  @include _flex-row;
+  @include _justify-content-align-items(center, flex-start);
+}
+
 @mixin ng-flex-row-between-center {
   @include _flex-row;
   @include _justify-content-align-items(space-between);
+}
+
+@mixin ng-flex-column-start-start {
+  @include _flex-column;
+  @include _justify-content-align-items(flex-start, flex-start);
 }

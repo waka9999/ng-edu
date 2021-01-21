@@ -1,0 +1,8 @@
+<div class="item-view">
+  <div class="mask"></div>
+  <img class="item-image" [src]="item?.url" [alt]="item?.name" />
+</div>
+<ng-carousel-content
+  [item]="item"
+  *ngIf="item.state === 'fadeIn' || item.state === 'slideIn'"
+></ng-carousel-content>
