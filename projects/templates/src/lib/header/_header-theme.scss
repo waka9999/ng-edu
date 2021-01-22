@@ -1,9 +1,12 @@
 @import "../../../../../node_modules/@angular/material/theming";
+@import "./header-navbar/header-navbar-theme";
 
 @mixin ng-header-theme($theme) {
   $color: mat-get-color-config($theme);
   $foreground: map-get($color, foreground);
   $background: map-get($color, background);
+
+  @include ng-header-navbar-theme($theme);
 
   .ng-header {
     background-color: transparent;

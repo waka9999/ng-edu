@@ -1,3 +1,10 @@
-<span>abc</span>
-<span>def</span>
-<span>xyz</span>
+<ul class="nav">
+  <li class="nav-item" *ngFor="let item of navbarItems">
+    <a
+      [routerLink]="item?.href"
+      routerLinkActive="active"
+      [title]="item?.title"
+      >{{ item.text }}</a
+    >
+  </li>
+</ul>

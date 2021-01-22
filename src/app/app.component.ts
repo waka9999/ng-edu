@@ -18,6 +18,7 @@ import {
 } from '@angular/router';
 import { carouselItems } from '@core/models/carousel';
 import { Container } from '@core/models/grid';
+import { navbarItems } from '@core/models/header';
 import { signItems } from '@core/models/sign-items';
 import { ConfigService } from '@core/services/config.service';
 import { InjectBase } from '@core/shared/inject.base';
@@ -34,12 +35,13 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class AppComponent extends InjectBase implements OnInit {
   signItems = signItems;
+  navbarItems = navbarItems;
 
   @ViewChild('progressbar', { static: true })
   progressbar!: ProgressBarComponent;
 
   carouselItems$!: Observable<CarouselItem[]>;
-  
+
   constructor(
     injector: Injector,
     private config: ConfigService,

@@ -25,3 +25,13 @@
     padding: 0;
   }
 }
+
+@mixin ng-header-navbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+$ng-header-navbar-nav-item-margin-right: 32px !default;
+@mixin ng-header-navbar-nav-item {
+  margin-right: $ng-header-navbar-nav-item-margin-right;
+}

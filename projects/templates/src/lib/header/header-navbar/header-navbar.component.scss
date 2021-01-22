@@ -2,6 +2,12 @@
 
 .ng-header-navbar {
   @include ng-header-navbar-base;
+  .nav {
+    @include ng-header-navbar-nav;
+    .nav-item {
+      @include ng-header-navbar-nav-item;
+    }
+  }
 }
 
 .ng-web {

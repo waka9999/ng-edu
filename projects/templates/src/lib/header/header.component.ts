@@ -8,6 +8,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { DestroyObservable } from '../shared/destroy.observable';
+import { NavbarItem } from './model';
 import { scrollEvent } from './util';
 
 @Component({
@@ -19,6 +20,7 @@ import { scrollEvent } from './util';
   host: { class: 'ng-header' },
 })
 export class HeaderComponent extends DestroyObservable implements OnInit {
+  @Input() navbarItems!: NavbarItem[];
   @Input() padTop!: number;
   @Input() scope!: number;
   private lastYOffset = 0;
@@ -78,9 +80,7 @@ export class HeaderComponent extends DestroyObservable implements OnInit {
   }
 
   private headerAfterPosition(): boolean {
-    return (
-      window.pageYOffset > this.padTop 
-    );
+    return window.pageYOffset > this.padTop;
   }
 
   private headerBeforePosition(): boolean {

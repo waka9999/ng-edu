@@ -14,7 +14,11 @@
         </div>
       </div>
     </ng-toolbar>
-    <ng-header [padTop]="48" [scope]="640"></ng-header>
+    <ng-header
+      [navbarItems]="navbarItems"
+      [padTop]="48"
+      [scope]="640"
+    ></ng-header>
     <main>
       <ng-carousel [items$]="carouselItems$"></ng-carousel>
     </main>

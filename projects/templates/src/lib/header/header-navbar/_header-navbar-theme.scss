@@ -1,0 +1,110 @@
+@import "../../../../../../node_modules/@angular/material/theming";
+
+$ng-header-navbar-item-a-padding: 4px 0 !default;
+$ng-header-navbar-item-a-transition: all 280ms cubic-bezier(0, 0, 0.2, 0.1) !default;
+
+@mixin _ng-header-navbar-item-before-show($accent) {
+  left: 0;
+  width: 100%;
+  background-color: mat-color($accent);
+}
+
+@mixin _ng-header-navbar-item-after {
+  left: 0;
+  width: 100%;
+}
+
+@mixin _ng-header-navbar-item-a($foreground) {
+  position: relative;
+  color: invert(mat-color($foreground, base));
+  text-decoration: none;
+  padding: $ng-header-navbar-item-a-padding;
+}
+
+@mixin _ng-header-navbar-item-a-content {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  height: 2px;
+  bottom: 0;
+  transition: $ng-header-navbar-item-a-transition;
+}
+
+@mixin _ng-header-navbar-item-a-hover {
+  left: 50%;
+  width: 0;
+}
+
+@mixin ng-header-navbar-theme($theme) {
+  $color: mat-get-color-config($theme);
+  $accent: map-get($color, accent);
+  $foreground: map-get($color, foreground);
+
+  .nav-item {
+    a {
+      @include _ng-header-navbar-item-a($foreground);
+      &.active:before {
+        @include _ng-header-navbar-item-before-show($accent);
+      }
+      &:after,
+      &:before {
+        @include _ng-header-navbar-item-a-content;
+      }
+      &:after {
+        @include _ng-header-navbar-item-after;
+      }
+      &:hover:after,
+      &:before {
+        @include _ng-header-navbar-item-a-hover;
+      }
+      &:focus:before,
+      &:hover:before {
+        @include _ng-header-navbar-item-before-show($accent);
+      }
+    }
+  }
+
+  .light-header {
+    .nav-item {
+      a {
+        color: mat-color($foreground, base);
+      }
+    }
+  }
+}
+
+// .nav-item {
+//   a {
+//     color: white;
+//   }
+// }
+
+// .item-link {
+//   position: relative;
+//   color: white;
+//   &:after,
+//   &:before {
+//     content: "";
+//     position: absolute;
+//     display: inline-block;
+//     height: 2px;
+//     bottom: 0;
+//     transition: all 280ms cubic-bezier(0, 0, 0.2, 0.1);
+//   }
+//   &:after {
+//     left: 0;
+//     width: 100%;
+//     background-color: white;
+//   }
+//   &:hover:after,
+//   &:before {
+//     left: 50%;
+//     width: 0;
+//   }
+//   &:focus:before,
+//   &:hover:before {
+//     left: 0;
+//     width: 100%;
+//     background-color: mat-color($primary);
+//   }
+// }

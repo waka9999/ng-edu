@@ -1,9 +1,12 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  Input,
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
+import { Observable } from 'rxjs';
+import { NavbarItem } from '../model';
 
 @Component({
   selector: 'ng-header-navbar',
@@ -14,6 +17,7 @@ import {
   host: { class: 'ng-header-navbar' },
 })
 export class HeaderNavbarComponent implements OnInit {
+  @Input() navbarItems!: NavbarItem[];
   constructor() {}
 
   ngOnInit(): void {}
