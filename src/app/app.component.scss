@@ -1,5 +1,6 @@
 $ng-sidenav-menu-width: 240px !default;
 $ng-sidenav-content-open-height: 100vh !default;
+$ng-header-sticky-main-margin-top: 0 !important !default;
 
 .sidenav-container {
   .sidenav-menu {
@@ -8,6 +9,10 @@ $ng-sidenav-content-open-height: 100vh !default;
 
   .mat-sidenav-content {
     height: auto;
+
+    .ng-header.sticky-top + main {
+      margin-top: $ng-header-sticky-main-margin-top;
+    }
 
     main {
       position: relative;
@@ -26,6 +31,7 @@ $ng-sidenav-content-open-height: 100vh !default;
 // z-index
 $ng-progress-bar-zindex: 1000 !default;
 $ng-toolbar-zindex: 200 !default;
+$ng-header-zindex: 200 !default;
 $ng-main-zindex: 0 !default;
 $ng-carousel-zindex: 100 !default;
 :host {
@@ -37,6 +43,10 @@ $ng-carousel-zindex: 100 !default;
       z-index: $ng-toolbar-zindex;
     }
 
+    .ng-header {
+      z-index: $ng-header-zindex;
+    }
+
     main {
       z-index: $ng-main-zindex;
       .ng-carousel {
@@ -44,4 +54,47 @@ $ng-carousel-zindex: 100 !default;
       }
     }
   }
+}
+
+$web-layout-header-main-top: -96px !default;
+$tablet-layout-header-main-top: -80px !default;
+$handset-layout-header-main-top: -56px !default;
+
+@mixin _web-layout-header-sticky-main {
+  .ng-header.sticky-top {
+    top: $web-layout-header-main-top;
+  }
+  main {
+    margin-top: $web-layout-header-main-top;
+  }
+}
+
+@mixin _tablet-layout-header-sticky-main {
+  .ng-header.sticky-top {
+    top: $tablet-layout-header-main-top;
+  }
+  main {
+    margin-top: $tablet-layout-header-main-top;
+  }
+}
+
+@mixin _handset-layout-header-sticky-main {
+  .ng-header.sticky-top {
+    top: $handset-layout-header-main-top;
+  }
+  main {
+    margin-top: $handset-layout-header-main-top;
+  }
+}
+// header sticky
+:host-context(.ng-web) {
+  @include _web-layout-header-sticky-main;
+}
+
+:host-context(.ng-tablet) {
+  @include _tablet-layout-header-sticky-main;
+}
+
+:host-context(.ng-handset) {
+  @include _handset-layout-header-sticky-main;
 }

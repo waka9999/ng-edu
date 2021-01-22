@@ -1,0 +1,17 @@
+@import "./header-logo-base";
+
+.ng-header-logo {
+  @include ng-header-logo-base;
+}
+
+.ng-web {
+  @include web-layout-ng-header-logo-image;
+}
+
+.ng-tablet {
+  @include tablet-layout-ng-header-logo-image;
+}
+
+.ng-handset {
+  @include handset-layout-ng-header-logo-image;
+}

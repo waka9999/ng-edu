@@ -1,0 +1,17 @@
+@import "./header-navbar-base";
+
+.ng-header-navbar {
+  @include ng-header-navbar-base;
+}
+
+.ng-web {
+  @include web-layout-ng-header-navbar;
+}
+
+.ng-tablet {
+  @include tablet-layout-ng-header-navbar;
+}
+
+.ng-handset {
+  @include handset-layout-ng-header-navbar;
+}

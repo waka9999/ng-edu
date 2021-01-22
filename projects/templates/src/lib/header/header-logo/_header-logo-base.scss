@@ -1,0 +1,41 @@
+@import "../../style/flex";
+
+@mixin ng-header-logo-base {
+  a {
+    display: inline-block;
+    transition: display 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include _ng-header-logo-switch;
+  }
+}
+
+@mixin _ng-header-logo-switch {
+  &.dark-logo {
+    display: inline-block;
+  }
+  &.light-logo {
+    display: none;
+  }
+}
+
+@mixin web-layout-ng-header-logo-image {
+  .ng-header-logo {
+    img {
+      height: calc(var(--ng-delta) * 2.5);
+    }
+  }
+}
+
+@mixin tablet-layout-ng-header-logo-image {
+  .ng-header-logo {
+    img {
+      height: calc(var(--ng-delta) * 3);
+    }
+  }
+}
+@mixin handset-layout-ng-header-logo-image {
+  .ng-header-logo {
+    img {
+      height: calc(var(--ng-delta) * 4);
+    }
+  }
+}

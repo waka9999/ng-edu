@@ -1,0 +1,40 @@
+@import "../style/flex";
+
+$ng-header-transition-background: background-color 280ms
+  cubic-bezier(0.4, 0, 0.2, 1) !default;
+$ng-header-transition-transform-down: transform 400ms
+  cubic-bezier(0, 0, 0.2, 0.1) !default;
+$ng-header-transition-transform-up: transform 400ms cubic-bezier(0.4, 0, 0.2, 1) !default;
+
+@mixin ng-header-base {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  transition: $ng-header-transition-background;
+}
+
+@mixin ng-header-container {
+  @include ng-flex-row-between-center;
+}
+
+@mixin ng-header-sticky-top-transform-down {
+  transform: translateY(100%);
+  transition: $ng-header-transition-transform-down;
+}
+
+@mixin ng-header-sticky-top-transform-up {
+  transform: translateY(0);
+  transition: $ng-header-transition-transform-up;
+}
+
+@mixin ng-header-light {
+  .ng-header-logo {
+    a.light-logo {
+      display: inline-block !important;
+    }
+    a.dark-logo {
+      display: none !important;
+    }
+  }
+}

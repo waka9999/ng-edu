@@ -1,0 +1,24 @@
+@import "./header-base";
+
+.ng-header {
+  @include ng-header-base;
+
+  &.sticky-top {
+    position: fixed !important;
+
+    &.transform-down {
+      @include ng-header-sticky-top-transform-down;
+    }
+    &.transform-up {
+      @include ng-header-sticky-top-transform-up;
+    }
+  }
+
+  &.light-header {
+    @include ng-header-light;
+  }
+
+  .container {
+    @include ng-header-container;
+  }
+}
