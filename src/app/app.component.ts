@@ -1,6 +1,7 @@
 import { Breakpoints } from '@angular/cdk/layout';
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   Injector,
@@ -36,6 +37,7 @@ import { takeUntil } from 'rxjs/operators';
 export class AppComponent extends InjectBase implements OnInit {
   signItems = signItems;
   navbarItems = navbarItems;
+  showMenu = false;
 
   @ViewChild('progressbar', { static: true })
   progressbar!: ProgressBarComponent;
@@ -48,7 +50,8 @@ export class AppComponent extends InjectBase implements OnInit {
     private title: Title,
     private elementRef: ElementRef,
     private renderer: Renderer2,
-    private router: Router
+    private router: Router,
+    private changeDetectionRef: ChangeDetectorRef
   ) {
     super(injector);
   }
@@ -104,16 +107,25 @@ export class AppComponent extends InjectBase implements OnInit {
     this.renderer.addClass(this.elementRef.nativeElement, Container.Handset);
     this.renderer.removeClass(this.elementRef.nativeElement, Container.Tablet);
     this.renderer.removeClass(this.elementRef.nativeElement, Container.Web);
+
+    this.showMenu = true;
+    this.changeDetectionRef.markForCheck();
   }
   private updateLayoutForTabletChange(): void {
     this.renderer.addClass(this.elementRef.nativeElement, Container.Tablet);
     this.renderer.removeClass(this.elementRef.nativeElement, Container.Web);
     this.renderer.removeClass(this.elementRef.nativeElement, Container.Handset);
+
+    this.showMenu = true;
+    this.changeDetectionRef.markForCheck();
   }
   private updateLayoutForWebChange(): void {
     this.renderer.addClass(this.elementRef.nativeElement, Container.Web);
     this.renderer.removeClass(this.elementRef.nativeElement, Container.Tablet);
     this.renderer.removeClass(this.elementRef.nativeElement, Container.Handset);
+    
+    this.showMenu = false;
+    this.changeDetectionRef.markForCheck();
   }
 
   private initCarousel(): void {

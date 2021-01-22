@@ -9,15 +9,3 @@
     }
   }
 }
-
-.ng-web {
-  @include web-layout-ng-header-navbar;
-}
-
-.ng-tablet {
-  @include tablet-layout-ng-header-navbar;
-}
-
-.ng-handset {
-  @include handset-layout-ng-header-navbar;
-}

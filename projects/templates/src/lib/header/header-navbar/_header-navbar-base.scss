@@ -3,29 +3,6 @@
   display: block;
 }
 
-@mixin web-layout-ng-header-navbar {
-  .ng-header-navbar {
-    padding-top: var(--ng-delta);
-    padding-bottom: var(--ng-delta);
-    line-height: 64px;
-  }
-}
-
-@mixin tablet-layout-ng-header-navbar {
-  .ng-header-navbar {
-    line-height: 56px;
-    padding-top: var(--ng-delta);
-    padding-bottom: var(--ng-delta);
-  }
-}
-
-@mixin handset-layout-ng-header-navbar {
-  .ng-header-navbar {
-    line-height: 56px;
-    padding: 0;
-  }
-}
-
 @mixin ng-header-navbar-nav {
   display: flex;
   flex-wrap: wrap;

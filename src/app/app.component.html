@@ -14,13 +14,17 @@
         </div>
       </div>
     </ng-toolbar>
-    <ng-header
-      [navbarItems]="navbarItems"
-      [padTop]="48"
-      [scope]="640"
-    ></ng-header>
+    <ng-header [padTop]="48" [scope]="640">
+      <ng-container *ngIf="showMenu; else navbar">
+        <ng-header-menu (sidenavToggle)="snav.toggle()"></ng-header-menu>
+      </ng-container>
+    </ng-header>
     <main>
       <ng-carousel [items$]="carouselItems$"></ng-carousel>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<ng-template #navbar>
+  <ng-header-navbar [navbarItems]="navbarItems"></ng-header-navbar>
+</ng-template>

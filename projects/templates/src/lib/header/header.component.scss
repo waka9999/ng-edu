@@ -22,3 +22,40 @@
     @include ng-header-container;
   }
 }
+
+.ng-web {
+  ng-header-navbar {
+    @include web-layout-ng-header-navbar;
+  }
+  ng-header-menu {
+    @include web-layout-ng-header-menu;
+  }
+}
+.ng-tablet {
+  ng-header-navbar {
+    @include tablet-layout-ng-header-navbar;
+  }
+  ng-header-menu {
+    @include tablet-layout-ng-header-menu;
+  }
+}
+.ng-handset {
+  ng-header-navbar {
+    @include handset-layout-ng-header-navbar;
+  }
+  ng-header-menu {
+    @include handset-layout-ng-header-menu;
+  }
+}
+
+.ng-web {
+  @include web-layout-ng-header;
+}
+
+.ng-tablet {
+  @include tablet-layout-ng-header;
+}
+
+.ng-handset {
+  @include handset-layout-ng-header;
+}
