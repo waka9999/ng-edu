@@ -9,7 +9,6 @@ import {
 @Component({
   selector: 'ng-header-menu',
   templateUrl: './header-menu.component.html',
-  styleUrls: ['./header-menu.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'ng-header-menu' },
