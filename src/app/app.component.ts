@@ -38,6 +38,7 @@ export class AppComponent extends InjectBase implements OnInit {
   signItems = signItems;
   navbarItems = navbarItems;
   showMenu = false;
+  sideNavMode: 'over' | 'push' | 'side' = 'over';
 
   @ViewChild('progressbar', { static: true })
   progressbar!: ProgressBarComponent;
@@ -103,28 +104,33 @@ export class AppComponent extends InjectBase implements OnInit {
   private updateLayoutForMediaChange(): void {
     console.log('meida change');
   }
-  private updateLayoutForHandSetChange(): void {
-    this.renderer.addClass(this.elementRef.nativeElement, Container.Handset);
+  private updateLayoutForWebChange(): void {
+    this.renderer.addClass(this.elementRef.nativeElement, Container.Web);
     this.renderer.removeClass(this.elementRef.nativeElement, Container.Tablet);
-    this.renderer.removeClass(this.elementRef.nativeElement, Container.Web);
+    this.renderer.removeClass(this.elementRef.nativeElement, Container.Handset);
 
-    this.showMenu = true;
+    this.showMenu = false;
+    this.sideNavMode = 'side';
     this.changeDetectionRef.markForCheck();
   }
+
   private updateLayoutForTabletChange(): void {
     this.renderer.addClass(this.elementRef.nativeElement, Container.Tablet);
     this.renderer.removeClass(this.elementRef.nativeElement, Container.Web);
     this.renderer.removeClass(this.elementRef.nativeElement, Container.Handset);
 
     this.showMenu = true;
+    this.sideNavMode = 'side';
     this.changeDetectionRef.markForCheck();
   }
-  private updateLayoutForWebChange(): void {
-    this.renderer.addClass(this.elementRef.nativeElement, Container.Web);
+
+  private updateLayoutForHandSetChange(): void {
+    this.renderer.addClass(this.elementRef.nativeElement, Container.Handset);
     this.renderer.removeClass(this.elementRef.nativeElement, Container.Tablet);
-    this.renderer.removeClass(this.elementRef.nativeElement, Container.Handset);
-    
-    this.showMenu = false;
+    this.renderer.removeClass(this.elementRef.nativeElement, Container.Web);
+
+    this.showMenu = true;
+    this.sideNavMode = 'over';
     this.changeDetectionRef.markForCheck();
   }
 

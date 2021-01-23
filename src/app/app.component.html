@@ -1,6 +1,8 @@
 <ng-progress-bar #progressbar></ng-progress-bar>
 <mat-sidenav-container class="sidenav-container" [hasBackdrop]="true">
-  <mat-sidenav #snav class="sidenav-menu" [opened]="true"> ASDF </mat-sidenav>
+  <mat-sidenav #snav class="sidenav-menu" [mode]="sideNavMode">
+    ASDF
+  </mat-sidenav>
   <mat-sidenav-content>
     <ng-toolbar class="ng-primary">
       <ng-language-menu class="toolbar-start"></ng-language-menu>
