@@ -1,0 +1,39 @@
+language: node_js
+node_js:
+  - "14.5"
+branches:
+  only:
+    - main
+notifications:
+  email: false
+cache:
+  directories:
+  - node_modules
+before_install:
+- export TZ='Asia/Shanghai'
+- export TRAVIS_TAG=v0.1.0-alpha
+before_script:
+  - npm install -g @angular/cli
+script:
+  - npm install
+  - npm run build -- --prod  --base-href /ng-edu/
+  - cp dist/ng-edu/index.html dist/ng-edu/404.html
+  - tar -czvf dist.tgz ./dist/
+  - sha256sum dist.tgz > dist.asc
+deploy:
+  - provider: pages
+    github_token: $GITHUB_TOKEN
+    skip_cleanup: true
+    keep_history: true
+    local_dir: dist/ng-edu
+    on:
+      branch: main
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    file:
+    - dist.tgz
+    - dist.asc
+    skip_cleanup: true
+    keep_history: true
+    on:
+      tags: true
