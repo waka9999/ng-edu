@@ -13,6 +13,7 @@ import {
   CarouselModule,
   HeaderModule,
 } from 'projects/templates/src/public-api';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import {
     CarouselModule,
     HeaderModule,
     MatSidenavModule,
+    ScullyLibModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
