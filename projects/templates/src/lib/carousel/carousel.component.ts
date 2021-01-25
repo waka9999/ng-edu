@@ -93,7 +93,6 @@ export class CarouselComponent extends DestroyObservable implements OnInit {
         this.items[0].state = 'fadeIn';
         return;
       }
-
       this.items[0].state = 'fadeIn';
       this.items[1].state = 'fadeOut';
       this.updateFadeState();

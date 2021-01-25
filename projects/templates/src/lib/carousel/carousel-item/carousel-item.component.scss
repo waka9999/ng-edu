@@ -6,8 +6,8 @@
   .item-view {
     @include ng-carousel-item-view;
 
-    .item-image {
-      @include ng-carousel-item-image;
+    .item-image-background {
+      @include ng-carousel-item-image-background;
     }
   }
 
@@ -18,16 +18,4 @@
 
 .ng-handset {
   @include handset-layout-ng-carousel-content-position;
-}
-
-.ng-web {
-  @include web-layout-ng-carousel-item;
-}
-
-.ng-tablet {
-  @include tablet-layout-ng-carousel-item;
-}
-
-.ng-handset {
-  @include handset-layout-ng-carousel-item;
 }

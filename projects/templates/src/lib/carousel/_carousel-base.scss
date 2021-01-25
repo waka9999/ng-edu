@@ -4,7 +4,7 @@ $ng-carousel-zindex: 10 !default;
 $ng-carousel-controls: 30 !default;
 $ng-carousel-content: 20 !default;
 $ng-carousel-mask: 10 !default;
-$ng-carousel-image: 5 !default;
+$ng-carousel-image-background: 5 !default;
 
 @mixin ng-carousel-zindex {
   z-index: $ng-carousel-zindex;
@@ -22,8 +22,8 @@ $ng-carousel-image: 5 !default;
     .mask {
       z-index: $ng-carousel-mask;
     }
-    .item-image {
-      z-index: $ng-carousel-image;
+    .item-image-background {
+      z-index: $ng-carousel-image-background;
     }
     .ng-carousel-content {
       z-index: $ng-carousel-content;
