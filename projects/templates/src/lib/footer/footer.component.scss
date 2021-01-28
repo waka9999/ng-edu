@@ -1,0 +1,23 @@
+@import "./footer-base";
+
+.ng-footer {
+  @include ng-footer-base;
+  .footer-links {
+    @include ng-footer-links;
+  }
+  .footer-image {
+    @include ng-footer-image;
+  }
+}
+
+.ng-handset {
+  .ng-footer {
+    @include handset-layout-ng-footer;
+    .footer-links {
+      flex-direction: column;
+    }
+    .footer-image {
+      @include handset-layout-ng-footer-image-widget;
+    }
+  }
+}

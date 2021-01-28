@@ -1,0 +1,18 @@
+@import "../../../../../../node_modules/@angular/material/theming";
+
+@mixin ng-links-widget-theme($theme) {
+  $color: mat-get-color-config($theme);
+  $accent: map-get($color, accent);
+  $foreground: map-get($color, foreground);
+
+  .ng-links-widget {
+    h3 {
+      color: invert(mat-color($foreground, text));
+    }
+    a {
+      color: invert(mat-color($foreground, secondary-text));
+      &:hover {
+        color: mat-color($accent);
+      }    }
+  }
+}

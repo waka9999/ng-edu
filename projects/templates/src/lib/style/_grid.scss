@@ -50,3 +50,15 @@
     max-width: 1320px;
   }
 }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row > * {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+}

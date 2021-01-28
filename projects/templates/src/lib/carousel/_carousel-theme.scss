@@ -12,7 +12,7 @@
     @include ng-carousel-item-theme($theme);
 
     .ng-carousel-control {
-      color: invert(mat-color($foreground, carousel-text));
+      color: invert(mat-color($foreground, text));
     }
   }
 }

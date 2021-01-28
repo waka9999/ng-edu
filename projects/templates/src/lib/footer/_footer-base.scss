@@ -1,0 +1,32 @@
+@import "../style/flex";
+
+$ng-footer-links-flex: 1 0 70%;
+$ng-footer-image-flex: 0 1 30%;
+
+@mixin ng-footer-links {
+  @include ng-flex-row-between-start;
+  flex: $ng-footer-links-flex;
+}
+
+@mixin ng-footer-image {
+  @include ng-flex-row-end-center;
+  flex: $ng-footer-image-flex;
+}
+
+$ng-footer-padding: 48px 0 0 !default;
+
+@mixin ng-footer-base {
+  position: relative;
+  display: block;
+  padding: $ng-footer-padding;
+}
+
+@mixin handset-layout-ng-footer {
+  .footer-links,
+  .footer-image {
+    flex: 0 1 50%;
+  }
+}
+@mixin handset-layout-ng-footer-image-widget {
+  @include ng-flex-row-center-start;
+} ;

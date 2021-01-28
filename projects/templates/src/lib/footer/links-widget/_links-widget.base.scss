@@ -1,0 +1,29 @@
+@import "../../style/flex";
+
+$ng-links-widget-font-size: 0.875rem !default;
+$ng-links-widget-item-font-size: 10px !default;
+$ng-links-widget-h3-height: 28px;
+$ng-links-widget-item-height: 24px;
+@mixin ng-links-widget-base {
+  @include ng-flex-column-start-start;
+  margin-bottom: 1rem;
+}
+
+@mixin ng-links-widget-h3 {
+  font-size: $ng-links-widget-font-size;
+  height: $ng-links-widget-h3-height;
+  line-height: $ng-links-widget-h3-height;
+  margin-bottom: 14px;
+}
+
+@mixin ng-links-widget-item {
+  li {
+    height: $ng-links-widget-item-height;
+    line-height: $ng-links-widget-item-height;
+    margin-bottom: 8px;
+    a {
+      font-size: $ng-links-widget-item-font-size;
+      text-decoration: none;
+    }
+  }
+}

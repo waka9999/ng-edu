@@ -1,0 +1,19 @@
+@import "../../style/flex";
+
+$ng-image-widget-size: 108px !default;
+
+@mixin image-widget-base {
+  @include ng-flex-column-center-center;
+}
+
+@mixin image-widget-description {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+@mixin image-widget-size {
+  width: $ng-image-widget-size;
+  height: $ng-image-widget-size;
+}

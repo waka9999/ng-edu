@@ -1,4 +1,4 @@
-import { CarouselItem } from "projects/templates/src/lib/carousel/model";
+import { CarouselItem } from "projects/templates/src/lib/carousel";
 
 export const carouselItems: CarouselItem[] = [
     {

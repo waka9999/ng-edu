@@ -1,0 +1,11 @@
+@import "./links-widget.base";
+
+.ng-links-widget {
+  @include ng-links-widget-base;
+  h3 {
+    @include ng-links-widget-h3;
+  }
+  ul {
+    @include ng-links-widget-item;
+  }
+}

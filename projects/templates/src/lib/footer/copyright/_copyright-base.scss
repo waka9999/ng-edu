@@ -1,0 +1,9 @@
+@import "../../style/flex";
+
+$ng-copyright-padding: 1rem 0 !default;
+$ng-copyright-link-item-margin-right: 1rem 0 !default;
+
+@mixin ng-copyright-base {
+  @include ng-flex-row-between-start;
+  padding: $ng-copyright-padding;
+}

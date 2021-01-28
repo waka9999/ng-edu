@@ -18,12 +18,14 @@ import {
   Router,
 } from '@angular/router';
 import { carouselItems } from '@core/models/carousel';
+import { imageWidget, linksWidgets } from '@core/models/footer';
 import { Container } from '@core/models/grid';
 import { navbarItems } from '@core/models/header';
 import { signItems } from '@core/models/sign-items';
 import { ConfigService } from '@core/services/config.service';
 import { InjectBase } from '@core/shared/inject.base';
 import { CarouselItem } from 'projects/templates/src/lib/carousel/model';
+import { ImageWidget, LinksWidget } from 'projects/templates/src/lib/footer';
 import { ProgressBarComponent } from 'projects/templates/src/lib/progress-bar';
 import { Observable, of } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -44,6 +46,8 @@ export class AppComponent extends InjectBase implements OnInit {
   progressbar!: ProgressBarComponent;
 
   carouselItems$!: Observable<CarouselItem[]>;
+  footerLinks$!: Observable<LinksWidget[]>;
+  footerImage$!: Observable<ImageWidget>;
 
   constructor(
     injector: Injector,
@@ -74,6 +78,7 @@ export class AppComponent extends InjectBase implements OnInit {
       this.updateLayoutForMediaChange.bind(this)
     );
     this.initCarousel();
+    this.initFooter();
   }
 
   private initConfig(): void {
@@ -136,5 +141,10 @@ export class AppComponent extends InjectBase implements OnInit {
 
   private initCarousel(): void {
     this.carouselItems$ = of(carouselItems);
+  }
+
+  private initFooter(): void {
+    this.footerLinks$ = of(linksWidgets);
+    this.footerImage$ = of(imageWidget);
   }
 }

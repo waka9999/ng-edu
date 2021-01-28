@@ -1,0 +1,15 @@
+<footer class="container">
+  <div class="row">
+    <div class="footer-links">
+      <ng-container *ngFor="let widget of widgets$ | async">
+        <ng-links-widget [widget]="widget"></ng-links-widget>
+      </ng-container>
+    </div>
+    <div class="footer-image">
+      <ng-image-widget [image]="image$ | async"></ng-image-widget>
+    </div>
+  </div>
+  <div class="row">
+    <ng-copyright></ng-copyright>
+  </div>
+</footer>

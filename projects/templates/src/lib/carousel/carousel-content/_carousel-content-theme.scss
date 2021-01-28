@@ -16,15 +16,15 @@
 @mixin _ng-carousel-content-typography($foreground) {
   .content-title,
   .content-heading {
-    color: invert(mat-color($foreground, carousel-text));
+    color: invert(mat-color($foreground, text));
   }
   .content-abstract {
-    color: invert(mat-color($foreground, carousel-secondary-text));
+    color: invert(mat-color($foreground, secondary-text));
   }
 }
 
 @mixin _ng-carousel-content-item-link($foreground) {
-  color: invert(mat-color($foreground, carousel-text));
+  color: invert(mat-color($foreground, text));
   text-decoration: none;
   &:hover {
     text-decoration: underline;

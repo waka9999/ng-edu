@@ -1,0 +1,5 @@
+@import "./copyright-base";
+
+.ng-copyright {
+  @include ng-copyright-base;
+}

@@ -1,0 +1,12 @@
+@import "./image-widget-base";
+
+.ng-image-widget {
+  @include image-widget-base;
+  
+  p {
+    @include image-widget-description;
+  }
+  .image-qrcode {
+    @include image-widget-size;
+  }
+}

@@ -31,12 +31,48 @@ $ng-flex-align-items-center: center;
   @include _justify-content-align-items(center, flex-start);
 }
 
+@mixin ng-flex-row-end-start {
+  @include _flex-row;
+  @include _justify-content-align-items(flex-end, flex-start);
+}
+
+@mixin ng-flex-row-center-start {
+  @include _flex-row;
+  @include _justify-content-align-items(center, flex-start);
+}
+
+
+@mixin ng-flex-row-between-start {
+  @include _flex-row;
+  @include _justify-content-align-items(space-between, flex-start);
+}
+
 @mixin ng-flex-row-between-center {
   @include _flex-row;
   @include _justify-content-align-items(space-between);
 }
 
+@mixin ng-flex-row-end-center {
+  @include _flex-row;
+  @include _justify-content-align-items(flex-end);
+}
+
 @mixin ng-flex-column-start-start {
   @include _flex-column;
   @include _justify-content-align-items(flex-start, flex-start);
+}
+
+@mixin ng-flex-column-center-end {
+  @include _flex-column;
+  @include _justify-content-align-items(center, flex-end);
+}
+
+@mixin ng-flex-column-center-center {
+  @include _flex-column;
+  @include _justify-content-align-items(center);
+}
+
+@mixin ng-flex-column-start-center {
+  @include _flex-column;
+  @include _justify-content-align-items(start, center);
 }

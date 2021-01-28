@@ -12,6 +12,7 @@ import {
   ProgressBarModule,
   CarouselModule,
   HeaderModule,
+  FooterModule,
 } from 'projects/templates/src/public-api';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 
@@ -27,6 +28,7 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
     ProgressBarModule,
     CarouselModule,
     HeaderModule,
+    FooterModule,
     MatSidenavModule,
     ScullyLibModule,
   ],

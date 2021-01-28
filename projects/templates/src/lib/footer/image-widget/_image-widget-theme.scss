@@ -1,0 +1,20 @@
+@import "../../../../../../node_modules/@angular/material/theming";
+
+@mixin ng-image-widget-theme($theme) {
+  $color: mat-get-color-config($theme);
+  $accent: map-get($color, accent);
+  $foreground: map-get($color, foreground);
+  $background: map-get($color, background);
+
+  .ng-image-widget {
+    p {
+      color: invert(mat-color($foreground, secondary-text));
+      strong {
+        color: mat-color($accent);
+      }
+    }
+    img {
+      border: 4px solid mat-color($background, border);
+    }
+  }
+}
