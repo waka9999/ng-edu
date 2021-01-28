@@ -6,7 +6,7 @@ $ng-links-widget-h3-height: 28px;
 $ng-links-widget-item-height: 24px;
 @mixin ng-links-widget-base {
   @include ng-flex-column-start-start;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 @mixin ng-links-widget-h3 {
