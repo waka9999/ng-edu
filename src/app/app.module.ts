@@ -10,7 +10,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import {
   ToolbarModule,
   ProgressBarModule,
-  CarouselModule,
   HeaderModule,
   FooterModule,
 } from 'projects/templates/src/public-api';
@@ -26,7 +25,6 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
     CommonModule,
     ToolbarModule,
     ProgressBarModule,
-    CarouselModule,
     HeaderModule,
     FooterModule,
     MatSidenavModule,

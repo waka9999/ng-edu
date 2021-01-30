@@ -22,7 +22,8 @@
       </ng-container>
     </ng-header>
     <main>
-      <ng-carousel [items$]="carouselItems$"></ng-carousel>
+      <router-outlet></router-outlet>
+      <!-- <ng-carousel [items$]="carouselItems$"></ng-carousel> -->
     </main>
     <ng-footer [widgets$]="footerLinks$" [image$]="footerImage$"></ng-footer>
   </mat-sidenav-content>

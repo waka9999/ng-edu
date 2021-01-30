@@ -1,0 +1,17 @@
+<div class="container">
+  <ol class="breadcrumb">
+    <li
+      class="breadcrumb-item"
+      [ngClass]="{ active: item?.href === '' }"
+      *ngFor="let item of breadcrumb"
+    >
+      <ng-container *ngIf="item?.href !== ''">
+        <a [routerLink]="item?.href" [title]="item?.title">{{ item?.text }}</a>
+      </ng-container>
+      <ng-container *ngIf="item?.href === ''">
+        <span>{{ item?.text }}</span>
+      </ng-container>
+    </li>
+  </ol>
+  <h2>{{ heading }}</h2>
+</div>

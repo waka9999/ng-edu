@@ -1,0 +1,39 @@
+@import "../../../../../node_modules/@angular/material/theming";
+
+@mixin _ng-bread-item-before($foreground) {
+  content: "/";
+  padding: 0 0.5rem;
+  color: invert(mat-color($foreground, text));
+}
+
+@mixin _ng-bread-item($foreground) {
+  &.active {
+    color: invert(mat-color($foreground, secondary-text));
+  }
+  a {
+    color: invert(mat-color($foreground, text));
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin ng-breadcrumb-theme($theme) {
+  $color: mat-get-color-config($theme);
+  $foreground: map-get($color, foreground);
+  .ng-breadcrumb {
+    .breadcrumb-item + .breadcrumb-item::before {
+      @include _ng-bread-item-before($foreground);
+    }
+
+    .breadcrumb-item {
+      @include _ng-bread-item($foreground);
+    }
+
+    h2 {
+      color: invert(mat-color($foreground, text));
+      font-size: 48px;
+    }
+  }
+}

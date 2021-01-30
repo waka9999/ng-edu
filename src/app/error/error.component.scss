@@ -1,0 +1,6 @@
+@import "../style/layout";
+:host {
+  position: relative;
+  display: block;
+  @include app-image-background;
+}

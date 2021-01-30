@@ -1,0 +1,19 @@
+
+@mixin ng-breadcrumb-base {
+  position: relative;
+  display: block;
+}
+
+$ng-breadcrumb-margin-bottom: 1rem;
+@mixin _ng-breadcrumb-ul-style {
+  list-style: none;
+  padding: 0 0;
+}
+
+@mixin ng-breadcrumb-style {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: $ng-breadcrumb-margin-bottom;
+  @include _ng-breadcrumb-ul-style;
+}
+

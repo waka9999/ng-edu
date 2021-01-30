@@ -1,0 +1,8 @@
+@import "./breadcrumb-base";
+
+.ng-breadcrumb {
+  @include ng-breadcrumb-base;
+  .breadcrumb {
+    @include ng-breadcrumb-style;
+  }
+}
