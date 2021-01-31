@@ -62,6 +62,11 @@ $ng-flex-align-items-center: center;
   @include _justify-content-align-items(flex-start, flex-start);
 }
 
+@mixin ng-flex-column-center-start {
+  @include _flex-column;
+  @include _justify-content-align-items(center, flex-start);
+}
+
 @mixin ng-flex-column-center-end {
   @include _flex-column;
   @include _justify-content-align-items(center, flex-end);

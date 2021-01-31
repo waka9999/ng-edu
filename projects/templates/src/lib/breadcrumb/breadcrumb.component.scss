@@ -2,7 +2,13 @@
 
 .ng-breadcrumb {
   @include ng-breadcrumb-base;
-  .breadcrumb {
-    @include ng-breadcrumb-style;
+  .container {
+    @include ng-breadcrumb-container;
+    .breadcrumb {
+      @include ng-breadcrumb-style;
+    }
+    h2 {
+      @include ng-breadcrumb-heading;
+    }
   }
 }

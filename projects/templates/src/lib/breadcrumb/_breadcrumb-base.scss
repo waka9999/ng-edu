@@ -1,7 +1,10 @@
+@import "../style/flex";
+
+$ng-breadcrumb-hight: 144px !default;
 
 @mixin ng-breadcrumb-base {
   position: relative;
-  display: block;
+  height: $ng-breadcrumb-hight;
 }
 
 $ng-breadcrumb-margin-bottom: 1rem;
@@ -17,3 +20,11 @@ $ng-breadcrumb-margin-bottom: 1rem;
   @include _ng-breadcrumb-ul-style;
 }
 
+@mixin ng-breadcrumb-heading {
+  font-size: 32px;
+}
+
+@mixin ng-breadcrumb-container {
+  height: inherit;
+  @include ng-flex-column-center-start;
+}
