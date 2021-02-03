@@ -1,0 +1,22 @@
+@import "./search-base";
+.ng-search {
+  @include ng-search-base;
+  h3 {
+    @include ng-search-heading;
+  }
+  p {
+    @include ng-search-slogan;
+  }
+  .search-form {
+    @include ng-search-form;
+    .search-input {
+      @include ng-search-input;
+    }
+    .search-submit {
+      @include ng-search-submit;
+    }
+  }
+  .search-tags {
+    @include ng-search-tags;
+  }
+}

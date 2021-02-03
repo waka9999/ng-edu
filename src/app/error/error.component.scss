@@ -4,3 +4,13 @@
   display: block;
   @include app-image-background;
 }
+
+$ng-error-page-content: 1rem !default;
+
+.page-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: $app-page-content-min-height;
+  padding: $ng-error-page-content;
+}

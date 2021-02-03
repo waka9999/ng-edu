@@ -1,0 +1,36 @@
+@import "../../../../../node_modules/@angular/material/theming";
+
+@mixin ng-search-theme($theme) {
+  $color: mat-get-color-config($theme);
+  $primary: map-get($color, primary);
+  $accent: map-get($color, accent);
+  $foreground: map-get($color, foreground);
+  $background: map-get($color, background);
+
+  .ng-search {
+    h3 {
+      color: mat-color($primary);
+    }
+    p {
+      color: mat-color($primary);
+    }
+    .search-form {
+      .search-input {
+        border: 1px solid mat-color($accent);
+      }
+      .search-submit {
+        border: 1px solid mat-color($accent);
+        background-color: mat-color($accent);
+      }
+    }
+    .search-tags {
+      a {
+        color: mat-color($primary);
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

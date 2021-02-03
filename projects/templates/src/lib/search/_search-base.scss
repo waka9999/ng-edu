@@ -1,0 +1,45 @@
+@import "../style/flex";
+
+$ng-search-heading-font-size: 48px !default;
+$ng-search-control-height: 48px !default;
+$ng-search-item-width: 320px !default;
+
+@mixin ng-search-base {
+  position: relative;
+  @include ng-flex-column-start-center;
+}
+
+@mixin ng-search-heading {
+  font-size: $ng-search-heading-font-size;
+  margin: 1rem 0;
+}
+
+@mixin ng-search-slogan {
+  margin-bottom: 1rem;
+  font-size: 24px;
+}
+
+@mixin ng-search-input {
+  height: $ng-search-control-height;
+  line-height: $ng-search-control-height;
+  width: $ng-search-item-width;
+  padding: 8px;
+  margin: 1rem 0;
+}
+
+@mixin ng-search-submit {
+  padding: 8px;
+  margin-left: -2px;
+  height: $ng-search-control-height;
+  width: $ng-search-control-height;
+}
+
+@mixin ng-search-form {
+  margin: 1rem 0;
+  @include ng-flex-row-start-center;
+}
+
+@mixin ng-search-tags {
+  width: $ng-search-item-width;
+  @include ng-flex-row-around-center;
+}
